@@ -1,0 +1,286 @@
+[gd_scene format=3 uid="uid://dhqtub20ygakb"]
+
+[ext_resource type="Script" uid="uid://fwxcpt84stpe" path="res://scripts/ACTTWO/actTwoCutscene.gd" id="1_6200d"]
+[ext_resource type="Texture2D" uid="uid://b6ddipsj7becj" path="res://sprites/backgrounds/TEMP/ACTTWO/shotOfMarlonHolsteringTEMP.png" id="2_lsa2i"]
+[ext_resource type="Texture2D" uid="uid://b7o82tu38n423" path="res://sprites/backgrounds/TEMP/ACTTWO/MarlonQuickdrawsBehindHimTEMP.png" id="3_6200d"]
+[ext_resource type="AudioStream" uid="uid://bo07it3ngynry" path="res://sounds/shotgun/tempFire.mp3" id="3_riw3p"]
+[ext_resource type="Texture2D" uid="uid://cnxbrv2ksb5cu" path="res://sprites/backgrounds/TEMP/ACTTWO/marlonSurprisedLookTEMP.png" id="4_lsa2i"]
+[ext_resource type="FontFile" uid="uid://dyh4hpevdrpga" path="res://fonts/deer-diary.ttf" id="4_w6rlk"]
+[ext_resource type="Texture2D" uid="uid://bgol7vho4s8gl" path="res://sprites/backgrounds/TEMP/ACTTWO/winnieRevealTemp.png" id="5_ottx8"]
+[ext_resource type="PackedScene" uid="uid://cxs1vxnap356l" path="res://scenes/UI/uiTransitionFlash.tscn" id="5_y3cl8"]
+[ext_resource type="Texture2D" uid="uid://dpx6ad4prwia0" path="res://sprites/backgrounds/TEMP/ACTTWO/oneShotFromHisGunheadTEMP.png" id="6_twgr4"]
+[ext_resource type="Texture2D" uid="uid://ctqxypq7ipj4j" path="res://sprites/backgrounds/TEMP/ACTTWO/BANG.png" id="8_mw303"]
+[ext_resource type="Texture2D" uid="uid://gl1il3ycjnnu" path="res://sprites/backgrounds/TEMP/ACTTWO/unimpressedMarlonTEMP.png" id="9_v0gae"]
+[ext_resource type="Texture2D" uid="uid://beb4v4mc7hrfb" path="res://sprites/backgrounds/TEMP/ACTTWO/revealBuffArmsTemp.png" id="10_v0gae"]
+[ext_resource type="AudioStream" uid="uid://bpoxgkenta7fk" path="res://sounds/ambience/cutsceneAmbience.mp3" id="13_mw303"]
+[ext_resource type="Script" uid="uid://bqxcyx17q7oq6" path="res://scripts/sound/ambience.gd" id="14_j1j0a"]
+
+[sub_resource type="Animation" id="Animation_b3djy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_lsa2i")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BANG:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_riw3p")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BANG:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_fheon"]
+resource_name = "shot1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_lsa2i")]
+}
+
+[sub_resource type="Animation" id="Animation_ofka8"]
+resource_name = "shot2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_6200d")]
+}
+
+[sub_resource type="Animation" id="Animation_6200d"]
+resource_name = "shot3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_lsa2i")]
+}
+
+[sub_resource type="Animation" id="Animation_k2utk"]
+resource_name = "shot4"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_ottx8")]
+}
+
+[sub_resource type="Animation" id="Animation_v0gae"]
+resource_name = "shot5"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_twgr4"), ExtResource("8_mw303"), ExtResource("6_twgr4")]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BANG")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [],
+"times": PackedFloat32Array()
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BANG:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_riw3p")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BANG:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_m4fm6"]
+resource_name = "shot6"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_v0gae")]
+}
+
+[sub_resource type="Animation" id="Animation_mw303"]
+resource_name = "shot7"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_v0gae")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t2x3a"]
+_data = {
+&"RESET": SubResource("Animation_b3djy"),
+&"shot1": SubResource("Animation_fheon"),
+&"shot2": SubResource("Animation_ofka8"),
+&"shot3": SubResource("Animation_6200d"),
+&"shot4": SubResource("Animation_k2utk"),
+&"shot5": SubResource("Animation_v0gae"),
+&"shot6": SubResource("Animation_m4fm6"),
+&"shot7": SubResource("Animation_mw303")
+}
+
+[node name="ActTwoCutscene" type="Control" unique_id=1907349099 node_paths=PackedStringArray("flash")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6200d")
+flash = NodePath("UITransitionFlash")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=565110753]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(16.119999, 12.36)
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="TextureRect" parent="." unique_id=632738109]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 98.0
+offset_right = -75.33301
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lsa2i")
+
+[node name="ChangeBackgrounds" type="AnimationPlayer" parent="." unique_id=316191515]
+libraries/ = SubResource("AnimationLibrary_t2x3a")
+
+[node name="ExpositionText" type="Label" parent="ChangeBackgrounds" unique_id=1096596762]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_w6rlk")
+text = "You are Marlon Redwood. 
+You’ve been through it all. 
+Robberies, gun for hire, duels, arson and more. 
+This story isn’t about any of those events. 
+You left everything behind and are now alone. 
+The only thing giving you meaning in life… is hunting. 
+
+Shoot down as many birds as you can."
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="UITransitionFlash" parent="." unique_id=1424509204 instance=ExtResource("5_y3cl8")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 640.0
+offset_bottom = 480.0
+grow_horizontal = 1
+grow_vertical = 1
+pathToNewScene = "res://scenes/ACTTWO/actTwoLevel.tscn"
+whiteFlashOrBlackFlash = false
+
+[node name="BANG" type="AudioStreamPlayer" parent="." unique_id=1481273025]
+stream = ExtResource("3_riw3p")
+
+[node name="Ambience" type="AudioStreamPlayer" parent="." unique_id=1379100444 node_paths=PackedStringArray("flash")]
+stream = ExtResource("13_mw303")
+autoplay = true
+script = ExtResource("14_j1j0a")
+flash = NodePath("../UITransitionFlash")

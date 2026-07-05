@@ -1,0 +1,331 @@
+[gd_scene format=3 uid="uid://w68lpens5xs"]
+
+[ext_resource type="Script" uid="uid://bnca8hvpruxie" path="res://scripts/ENDING/ending.gd" id="1_kor1d"]
+[ext_resource type="PackedScene" uid="uid://cxs1vxnap356l" path="res://scenes/UI/uiTransitionFlash.tscn" id="2_4rxpg"]
+[ext_resource type="Texture2D" uid="uid://cu7wvek7t5pfy" path="res://sprites/backgrounds/TEMP/ENDING/MarltonSmirks.png" id="2_67cy0"]
+[ext_resource type="Texture2D" uid="uid://wdt64kth2aw8" path="res://sprites/backgrounds/TEMP/ENDING/WinnieLooksBack.png" id="3_20mky"]
+[ext_resource type="Texture2D" uid="uid://nxwcoukhb2pg" path="res://sprites/backgrounds/TEMP/ENDING/WinnieSittingDown.png" id="3_aokwa"]
+[ext_resource type="Texture2D" uid="uid://dy7qcg5x64dkm" path="res://sprites/backgrounds/TEMP/ENDING/WinnieLooksDown.png" id="3_cjpem"]
+[ext_resource type="Texture2D" uid="uid://d32ve1tuwmbex" path="res://sprites/backgrounds/TEMP/ENDING/CloseUpOfMarltonsFinger.png" id="3_mq6y0"]
+[ext_resource type="Texture2D" uid="uid://dpwdbxrjsmbih" path="res://sprites/backgrounds/TEMP/ENDING/WinnieLooksUp.png" id="4_rrww1"]
+[ext_resource type="Texture2D" uid="uid://b6ddipsj7becj" path="res://sprites/backgrounds/TEMP/ACTTWO/shotOfMarlonHolsteringTEMP.png" id="4_t6vm4"]
+[ext_resource type="Texture2D" uid="uid://cxau6ob4jd4wo" path="res://sprites/backgrounds/TEMP/ENDING/WinniePoint.png" id="5_cwmty"]
+[ext_resource type="Texture2D" uid="uid://bdd1h4i8n5btt" path="res://sprites/backgrounds/TEMP/ENDING/WinnieConfusion.png" id="6_653s1"]
+[ext_resource type="Texture2D" uid="uid://b7nkiia4avif2" path="res://sprites/backgrounds/TEMP/ENDING/MarltonStern.png" id="6_m6h4y"]
+[ext_resource type="Texture2D" uid="uid://ofgrg2bdhinp" path="res://sprites/backgrounds/TEMP/ENDING/MarltonWalk.png" id="7_hu8l5"]
+[ext_resource type="Texture2D" uid="uid://cnhnjep6rpsmm" path="res://sprites/backgrounds/TEMP/ENDING/WinnieScoffs.png" id="11_hoqir"]
+[ext_resource type="Texture2D" uid="uid://cuwgkiy3fmxnr" path="res://sprites/backgrounds/TEMP/ENDING/WinnieWalkAway.png" id="14_qkbpu"]
+[ext_resource type="AudioStream" uid="uid://bpoxgkenta7fk" path="res://sounds/ambience/cutsceneAmbience.mp3" id="17_t6vm4"]
+[ext_resource type="Script" uid="uid://bqxcyx17q7oq6" path="res://scripts/sound/ambience.gd" id="18_12bdp"]
+
+[sub_resource type="Animation" id="Animation_653s1"]
+resource_name = "CloseUpOfMarltonsFinger"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_mq6y0")]
+}
+
+[sub_resource type="Animation" id="Animation_hoqir"]
+resource_name = "MarltonBringsOutGun"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_t6vm4")]
+}
+
+[sub_resource type="Animation" id="Animation_wsmtg"]
+resource_name = "MarltonHolster"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_t6vm4")]
+}
+
+[sub_resource type="Animation" id="Animation_10xgf"]
+resource_name = "MarltonSmirks"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_67cy0")]
+}
+
+[sub_resource type="Animation" id="Animation_hu8l5"]
+resource_name = "MarltonStern"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_m6h4y")]
+}
+
+[sub_resource type="Animation" id="Animation_t6vm4"]
+resource_name = "MarltonWalk"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_hu8l5")]
+}
+
+[sub_resource type="Animation" id="Animation_aokwa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_67cy0")]
+}
+
+[sub_resource type="Animation" id="Animation_m6h4y"]
+resource_name = "WinnieConfusion"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_653s1")]
+}
+
+[sub_resource type="Animation" id="Animation_mq6y0"]
+resource_name = "WinnieLooksBack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_20mky")]
+}
+
+[sub_resource type="Animation" id="Animation_rrww1"]
+resource_name = "WinnieLooksDown"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_cjpem")]
+}
+
+[sub_resource type="Animation" id="Animation_20mky"]
+resource_name = "WinnieLooksUp"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_rrww1")]
+}
+
+[sub_resource type="Animation" id="Animation_x0q7v"]
+resource_name = "WinniePoint"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_cwmty")]
+}
+
+[sub_resource type="Animation" id="Animation_qkbpu"]
+resource_name = "WinnieScoffs"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_hoqir")]
+}
+
+[sub_resource type="Animation" id="Animation_12bdp"]
+resource_name = "WinnieWalkAway"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("14_qkbpu")]
+}
+
+[sub_resource type="Animation" id="Animation_cjpem"]
+resource_name = "closeUp"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_67cy0")]
+}
+
+[sub_resource type="Animation" id="Animation_cwmty"]
+resource_name = "sittingDown"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_aokwa")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rrww1"]
+_data = {
+&"CloseUpOfMarltonsFinger": SubResource("Animation_653s1"),
+&"MarltonBringsOutGun": SubResource("Animation_hoqir"),
+&"MarltonHolster": SubResource("Animation_wsmtg"),
+&"MarltonSmirks": SubResource("Animation_10xgf"),
+&"MarltonStern": SubResource("Animation_hu8l5"),
+&"MarltonWalk": SubResource("Animation_t6vm4"),
+&"RESET": SubResource("Animation_aokwa"),
+&"WinnieConfusion": SubResource("Animation_m6h4y"),
+&"WinnieLooksBack": SubResource("Animation_mq6y0"),
+&"WinnieLooksDown": SubResource("Animation_rrww1"),
+&"WinnieLooksUp": SubResource("Animation_20mky"),
+&"WinniePoint": SubResource("Animation_x0q7v"),
+&"WinnieScoffs": SubResource("Animation_qkbpu"),
+&"WinnieWalkAway": SubResource("Animation_12bdp"),
+&"closeUp": SubResource("Animation_cjpem"),
+&"sittingDown": SubResource("Animation_cwmty")
+}
+
+[node name="Ending" type="Control" unique_id=396522275 node_paths=PackedStringArray("flash")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kor1d")
+flash = NodePath("UITransitionFlash")
+
+[node name="EndingBackground" type="ColorRect" parent="." unique_id=1151641964]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="Texture" type="TextureRect" parent="." unique_id=1112668125]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 98.0
+offset_right = -75.33301
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_67cy0")
+
+[node name="ChangeBackgrounds" type="AnimationPlayer" parent="." unique_id=1635318739]
+libraries/ = SubResource("AnimationLibrary_rrww1")
+
+[node name="UITransitionFlash" parent="." unique_id=1424509204 instance=ExtResource("2_4rxpg")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 640.0
+offset_bottom = 480.0
+grow_horizontal = 1
+grow_vertical = 1
+pathToNewScene = "res://scenes/ENDINGANDCREDITS/Credits.tscn"
+whiteFlashOrBlackFlash = false
+
+[node name="Ambience" type="AudioStreamPlayer" parent="." unique_id=865015142 node_paths=PackedStringArray("flash")]
+stream = ExtResource("17_t6vm4")
+autoplay = true
+script = ExtResource("18_12bdp")
+flash = NodePath("../UITransitionFlash")

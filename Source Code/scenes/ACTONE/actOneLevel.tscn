@@ -1,0 +1,247 @@
+[gd_scene format=3 uid="uid://cg46ygwqud5m4"]
+
+[ext_resource type="PackedScene" uid="uid://cl3ytll4i0p1y" path="res://scenes/gun.tscn" id="1_fje2a"]
+[ext_resource type="AudioStream" uid="uid://crmghdux2a3wx" path="res://sounds/revolver/revolverCock.mp3" id="2_06y8a"]
+[ext_resource type="Script" uid="uid://tyajuj0k1l0t" path="res://scripts/gameLogic/roundLogic.gd" id="2_fiy2u"]
+[ext_resource type="AudioStream" uid="uid://deewqr2ochev" path="res://sounds/revolver/revolverShot.mp3" id="3_nkdpe"]
+[ext_resource type="PackedScene" uid="uid://bv0mi055gtvug" path="res://scenes/UI/generalHud.tscn" id="3_wnag0"]
+[ext_resource type="AudioStream" uid="uid://cubjetadg0mv" path="res://sounds/revolver/insertBullet.mp3" id="4_aq4su"]
+[ext_resource type="AudioStream" uid="uid://bch20pfkidlpw" path="res://sounds/shotgun/dryFire.mp3" id="5_hx4d8"]
+[ext_resource type="PackedScene" uid="uid://bykb7d4gipo2r" path="res://scenes/testPath.tscn" id="7_nkdpe"]
+[ext_resource type="PackedScene" uid="uid://cxs1vxnap356l" path="res://scenes/UI/uiTransitionFlash.tscn" id="9_aq4su"]
+[ext_resource type="AudioStream" uid="uid://bp7jq8qqi5k3w" path="res://sounds/ambience/huntingGameAmbience.mp3" id="10_hx4d8"]
+[ext_resource type="Script" uid="uid://bqxcyx17q7oq6" path="res://scripts/sound/ambience.gd" id="11_s4fqs"]
+
+[sub_resource type="Curve2D" id="Curve2D_nkdpe"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, 1, 0, 0, 0, 0, 21, 5, 0, 0, 0, 0, 49, 6, 0, 0, 0, 0, 75, 14, 0, 0, 0, 0, 112, 23, 0, 0, 0, 0, 151, 24, 0, 0, 0, 0, 169, 21, 0, 0, 0, 0, 200, 12, 0, 0, 0, 0, 221, 5, 0, 0, 0, 0, 234, 0, 0, 0, 0, 0, 260, -18, 0, 0, 0, 0, 281, -31, 0, 0, 0, 0, 308, -44, 0, 0, 0, 0, 340, -55, 0, 0, 0, 0, 384, -64, 0, 0, 0, 0, 408, -66, 0, 0, 0, 0, 431, -68, 0, 0, 0, 0, 460, -66, 0, 0, 0, 0, 493, -59, 0, 0, 0, 0, 521, -47, 0, 0, 0, 0, 546, -39, 0, 0, 0, 0, 583, -13, 0, 0, 0, 0, 608, 9, 0, 0, 0, 0, 636, 30, 0, 0, 0, 0, 659, 45, 0, 0, 0, 0, 687, 56, 0, 0, 0, 0, 716, 67, 0, 0, 0, 0, 738, 70, 0, 0, 0, 0, 792, 75, 0, 0, 0, 0, 852, 77, 0, 0, 0, 0, 895, 70, 0, 0, 0, 0, 928, 66, 0, 0, 0, 0, 967, 60, 0, 0, 0, 0, 1031, 51)
+}
+point_count = 34
+
+[sub_resource type="Curve2D" id="Curve2D_aq4su"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, -42, -21, 0, 0, 0, 0, -66, -41, 0, 0, 0, 0, -98, -53, 0, 0, 0, 0, -128, -57, 0, 0, 0, 0, -144, -56, 0, 0, 0, 0, -167, -50, 0, 0, 0, 0, -190, -43, 0, 0, 0, 0, -209, -32, 0, 0, 0, 0, -241, -7, 0, 0, 0, 0, -288, 16, 0, 0, 0, 0, -314, 41, 0, 0, 0, 0, -357, 64, 0, 0, 0, 0, -415, 92, 0, 0, 0, 0, -456, 107, 0, 0, 0, 0, -504, 98, 0, 0, 0, 0, -542, 77, 0, 0, 0, 0, -560, 53, 0, 0, 0, 0, -573, 24, 0, 0, 0, 0, -600, -11, 0, 0, 0, 0, -625, -53, 0, 0, 0, 0, -661, -71, 0, 0, 0, 0, -694, -83, 0, 0, 0, 0, -716, -79, 0, 0, 0, 0, -752, -62, 0, 0, 0, 0, -773, -36, 0, 0, 0, 0, -814, 37, 0, 0, 0, 0, -867, 62, 0, 0, 0, 0, -930, 44, 0, 0, 0, 0, -946, -6, 0, 0, 0, 0, -979, -41)
+}
+point_count = 31
+
+[sub_resource type="Curve2D" id="Curve2D_hx4d8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -11, 41, 0, 0, 0, 0, -35, 48, 0, 0, 0, 0, -48, 84, 0, 0, 0, 0, -36, 119, 0, 0, 0, 0, -13, 145, 0, 0, 0, 0, 9, 153, 0, 0, 0, 0, 19, 171, 0, 0, 0, 0, 7, 189, 0, 0, 0, 0, -8, 198, 0, 0, 0, 0, -26, 208, 0, 0, 0, 0, -40, 224, 0, 0, 0, 0, -37, 250, 0, 0, 0, 0, -18, 260, 0, 0, 0, 0, -3, 265, 0, 0, 0, 0, 2, 290, 0, 0, 0, 0, -21, 320, 0, 0, 0, 0, -38, 326, 0, 0, 0, 0, -55, 335, 0, 0, 0, 0, -45, 372, 0, 0, 0, 0, -30, 385, 0, 0, 0, 0, -10, 394, 0, 0, 0, 0, 4, 397, 0, 0, 0, 0, 3, 425, 0, 0, 0, 0, -27, 441, 0, 0, 0, 0, -42, 456, 0, 0, 0, 0, -47, 482, 0, 0, 0, 0, -24, 495, 0, 0, 0, 0, -13, 501, 0, 0, 0, 0, -9, 519, 0, 0, 0, 0, -16, 525, 0, 0, 0, 0, -26, 532, 0, 0, 0, 0, -40, 546, 0, 0, 0, 0, -30, 562, 0, 0, 0, 0, -6, 577, 0, 0, 0, 0, -5, 605, 0, 0, 0, 0, -28, 608, 0, 0, 0, 0, -54, 636, 0, 0, 0, 0, -36, 659, 0, 0, 0, 0, -4, 685)
+}
+point_count = 39
+
+[sub_resource type="Curve2D" id="Curve2D_s4fqs"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -11, 42, 0, 0, 0, 0, -32, 54, 0, 0, 0, 0, -48, 80, 0, 0, 0, 0, -36, 108, 0, 0, 0, 0, -24, 124, 0, 0, 0, 0, -11, 137, 0, 0, 0, 0, -6, 164, 0, 0, 0, 0, -17, 184, 0, 0, 0, 0, -30, 199, 0, 0, 0, 0, -38, 215, 0, 0, 0, 0, -40, 245, 0, 0, 0, 0, -28, 269, 0, 0, 0, 0, -15, 284, 0, 0, 0, 0, -7, 290, 0, 0, 0, 0, -11, 322, 0, 0, 0, 0, -23, 338, 0, 0, 0, 0, -40, 359, 0, 0, 0, 0, -42, 386, 0, 0, 0, 0, -34, 405, 0, 0, 0, 0, -23, 417, 0, 0, 0, 0, -15, 423, 0, 0, 0, 0, -5, 437, 0, 0, 0, 0, -11, 462, 0, 0, 0, 0, -21, 470, 0, 0, 0, 0, -27, 474, 0, 0, 0, 0, -37, 493, 0, 0, 0, 0, -31, 518, 0, 0, 0, 0, -24, 527, 0, 0, 0, 0, -5, 538, 0, 0, 0, 0, 8, 557, 0, 0, 0, 0, 2, 581, 0, 0, 0, 0, -12, 592, 0, 0, 0, 0, -33, 611, 0, 0, 0, 0, -29, 637, 0, 0, 0, 0, -10, 655, 0, 0, 0, 0, 2, 682, 0, 0, 0, 0, -14, 701, 0, 0, 0, 0, -27, 708)
+}
+point_count = 38
+
+[sub_resource type="Curve2D" id="Curve2D_k8yhb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -19, 46, 0, 0, 0, 0, -31, 69, 0, 0, 0, 0, -43, 109, 0, 0, 0, 0, -26, 161, 0, 0, 0, 0, -10, 177, 0, 0, 0, 0, -12, 207, 0, 0, 0, 0, -39, 255, 0, 0, 0, 0, -46, 259, 0, 0, 0, 0, -51, 290, 0, 0, 0, 0, -33, 321, 0, 0, 0, 0, -17, 340, 0, 0, 0, 0, -9, 350, 0, 0, 0, 0, -22, 403, 0, 0, 0, 0, -34, 422, 0, 0, 0, 0, -46, 442, 0, 0, 0, 0, -56, 475, 0, 0, 0, 0, -31, 504, 0, 0, 0, 0, -23, 514, 0, 0, 0, 0, -6, 545, 0, 0, 0, 0, -22, 573, 0, 0, 0, 0, -42, 601, 0, 0, 0, 0, -51, 624, 0, 0, 0, 0, -34, 668, 0, 0, 0, 0, -7, 693, 0, 0, 0, 0, -32, 735)
+}
+point_count = 25
+
+[sub_resource type="Curve2D" id="Curve2D_5bryu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 45, -6, 0, 0, 0, 0, 97, -1, 0, 0, 0, 0, 127, 1, 0, 0, 0, 0, 142, 5, 0, 0, 0, 0, 166, 3, 0, 0, 0, 0, 201, 2, 0, 0, 0, 0, 223, -4, 0, 0, 0, 0, 233, -3, 0, 0, 0, 0, 282, -1, 0, 0, 0, 0, 289, 1, 0, 0, 0, 0, 343, 10, 0, 0, 0, 0, 380, 13, 0, 0, 0, 0, 396, 10, 0, 0, 0, 0, 424, 4, 0, 0, 0, 0, 444, -2, 0, 0, 0, 0, 479, -5, 0, 0, 0, 0, 498, -2, 0, 0, 0, 0, 511, 4, 0, 0, 0, 0, 536, 8, 0, 0, 0, 0, 557, 10, 0, 0, 0, 0, 581, 8, 0, 0, 0, 0, 596, 5, 0, 0, 0, 0, 606, 1, 0, 0, 0, 0, 630, -5, 0, 0, 0, 0, 653, -4, 0, 0, 0, 0, 670, 9, 0, 0, 0, 0, 685, 14, 0, 0, 0, 0, 696, 15, 0, 0, 0, 0, 722, 11, 0, 0, 0, 0, 743, 3, 0, 0, 0, 0, 757, -2)
+}
+point_count = 32
+
+[sub_resource type="Curve2D" id="Curve2D_e7tw1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, 1, 0, 0, 0, 0, 19, -5, 0, 0, 0, 0, 33, -10, 0, 0, 0, 0, 53, -11, 0, 0, 0, 0, 83, -10, 0, 0, 0, 0, 136, -11, 0, 0, 0, 0, 160, 0, 0, 0, 0, 0, 178, 3, 0, 0, 0, 0, 199, 6, 0, 0, 0, 0, 228, 6, 0, 0, 0, 0, 254, -3, 0, 0, 0, 0, 266, -9, 0, 0, 0, 0, 286, -14, 0, 0, 0, 0, 334, -16, 0, 0, 0, 0, 378, -14, 0, 0, 0, 0, 409, -13, 0, 0, 0, 0, 449, -7, 0, 0, 0, 0, 474, -5, 0, 0, 0, 0, 492, -1, 0, 0, 0, 0, 544, 4, 0, 0, 0, 0, 586, 5, 0, 0, 0, 0, 620, 3, 0, 0, 0, 0, 655, -3, 0, 0, 0, 0, 686, -8, 0, 0, 0, 0, 717, -13, 0, 0, 0, 0, 737, -11, 0, 0, 0, 0, 768, 7, 0, 0, 0, 0, 783, 12)
+}
+point_count = 28
+
+[sub_resource type="Curve2D" id="Curve2D_y8vda"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2, 0, 0, 0, 0, 0, -25, -3, 0, 0, 0, 0, -56, -3, 0, 0, 0, 0, -78, 0, 0, 0, 0, 0, -98, 1, 0, 0, 0, 0, -116, -1, 0, 0, 0, 0, -136, -6, 0, 0, 0, 0, -164, -13, 0, 0, 0, 0, -177, -13, 0, 0, 0, 0, -203, -13, 0, 0, 0, 0, -224, -9, 0, 0, 0, 0, -243, -3, 0, 0, 0, 0, -255, 1, 0, 0, 0, 0, -289, 11, 0, 0, 0, 0, -301, 13, 0, 0, 0, 0, -325, 13, 0, 0, 0, 0, -354, 9, 0, 0, 0, 0, -367, 6, 0, 0, 0, 0, -413, -5, 0, 0, 0, 0, -413, -5, 0, 0, 0, 0, -436, -10, 0, 0, 0, 0, -468, -11, 0, 0, 0, 0, -475, -10, 0, 0, 0, 0, -497, 0, 0, 0, 0, 0, -509, 4, 0, 0, 0, 0, -518, 9, 0, 0, 0, 0, -531, 16, 0, 0, 0, 0, -538, 19, 0, 0, 0, 0, -551, 23, 0, 0, 0, 0, -565, 23, 0, 0, 0, 0, -584, 22, 0, 0, 0, 0, -584, 22, 0, 0, 0, 0, -598, 16, 0, 0, 0, 0, -615, 9, 0, 0, 0, 0, -630, 2, 0, 0, 0, 0, -638, 0, 0, 0, 0, 0, -654, -3, 0, 0, 0, 0, -672, -2, 0, 0, 0, 0, -696, 7, 0, 0, 0, 0, -723, 24, 0, 0, 0, 0, -734, 29, 0, 0, 0, 0, -763, 33, 0, 0, 0, 0, -780, 33, 0, 0, 0, 0, -783, 33)
+}
+point_count = 44
+
+[sub_resource type="Curve2D" id="Curve2D_at4ne"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2, 3, 0, 0, 0, 0, -58, 3, 0, 0, 0, 0, -86, -6, 0, 0, 0, 0, -108, -15, 0, 0, 0, 0, -141, -24, 0, 0, 0, 0, -172, -30, 0, 0, 0, 0, -212, -30, 0, 0, 0, 0, -240, -27, 0, 0, 0, 0, -271, -18, 0, 0, 0, 0, -303, -9, 0, 0, 0, 0, -332, 0, 0, 0, 0, 0, -362, 8, 0, 0, 0, 0, -392, 14, 0, 0, 0, 0, -428, 18, 0, 0, 0, 0, -483, 13, 0, 0, 0, 0, -511, 6, 0, 0, 0, 0, -530, 0, 0, 0, 0, 0, -554, -6, 0, 0, 0, 0, -588, -9, 0, 0, 0, 0, -634, -2, 0, 0, 0, 0, -640, 1, 0, 0, 0, 0, -674, 19, 0, 0, 0, 0, -713, 34, 0, 0, 0, 0, -733, 39, 0, 0, 0, 0, -758, 39, 0, 0, 0, 0, -793, 35)
+}
+point_count = 26
+
+[sub_resource type="Curve2D" id="Curve2D_c5cbl"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 12, 34, 0, 0, 0, 0, 30, 52, 0, 0, 0, 0, 59, 67, 0, 0, 0, 0, 74, 74, 0, 0, 0, 0, 111, 81, 0, 0, 0, 0, 123, 86, 0, 0, 0, 0, 143, 108, 0, 0, 0, 0, 144, 111, 0, 0, 0, 0, 145, 150, 0, 0, 0, 0, 146, 159, 0, 0, 0, 0, 160, 175, 0, 0, 0, 0, 195, 173, 0, 0, 0, 0, 238, 170, 0, 0, 0, 0, 263, 178, 0, 0, 0, 0, 291, 203, 0, 0, 0, 0, 289, 235, 0, 0, 0, 0, 282, 263, 0, 0, 0, 0, 300, 289, 0, 0, 0, 0, 336, 303, 0, 0, 0, 0, 363, 296, 0, 0, 0, 0, 392, 289, 0, 0, 0, 0, 420, 286, 0, 0, 0, 0, 456, 310, 0, 0, 0, 0, 457, 343, 0, 0, 0, 0, 454, 365, 0, 0, 0, 0, 473, 402, 0, 0, 0, 0, 499, 417, 0, 0, 0, 0, 543, 417, 0, 0, 0, 0, 606, 435, 0, 0, 0, 0, 611, 446, 0, 0, 0, 0, 608, 479, 0, 0, 0, 0, 602, 505, 0, 0, 0, 0, 638, 536, 0, 0, 0, 0, 685, 548, 0, 0, 0, 0, 738, 548, 0, 0, 0, 0, 783, 561, 0, 0, 0, 0, 801, 578, 0, 0, 0, 0, 850, 612, 0, 0, 0, 0, 152, -4)
+}
+point_count = 40
+
+[sub_resource type="Curve2D" id="Curve2D_ypwxv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -5, -2, 0, 0, 0, 0, -51, -3, 0, 0, 0, 0, -86, 0, 0, 0, 0, 0, -109, 11, 0, 0, 0, 0, -134, 23, 0, 0, 0, 0, -162, 30, 0, 0, 0, 0, -186, 31, 0, 0, 0, 0, -214, 19, 0, 0, 0, 0, -229, 7, 0, 0, 0, 0, -244, -4, 0, 0, 0, 0, -272, -24, 0, 0, 0, 0, -291, -33, 0, 0, 0, 0, -315, -33, 0, 0, 0, 0, -352, -21, 0, 0, 0, 0, -384, 2, 0, 0, 0, 0, -410, 16, 0, 0, 0, 0, -427, 21, 0, 0, 0, 0, -461, 19, 0, 0, 0, 0, -492, 7, 0, 0, 0, 0, -512, -10, 0, 0, 0, 0, -551, -30, 0, 0, 0, 0, -572, -39, 0, 0, 0, 0, -591, -31, 0, 0, 0, 0, -611, -7, 0, 0, 0, 0, -628, 16, 0, 0, 0, 0, -640, 25, 0, 0, 0, 0, -646, 26, 0, 0, 0, 0, -671, 27, 0, 0, 0, 0, -695, 23, 0, 0, 0, 0, -714, 12, 0, 0, 0, 0, -734, -1, 0, 0, 0, 0, -741, -10)
+}
+point_count = 32
+
+[sub_resource type="Curve2D" id="Curve2D_a34yk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -3, 3, 0, 0, 0, 0, -36, 24, 0, 0, 0, 0, -53, 44, 0, 0, 0, 0, -53, 77, 0, 0, 0, 0, -38, 100, 0, 0, 0, 0, -9, 122, 0, 0, 0, 0, 16, 146, 0, 0, 0, 0, 18, 180, 0, 0, 0, 0, 4, 208, 0, 0, 0, 0, -20, 241, 0, 0, 0, 0, -34, 283, 0, 0, 0, 0, -10, 332, 0, 0, 0, 0, 14, 356, 0, 0, 0, 0, 34, 393, 0, 0, 0, 0, 24, 448, 0, 0, 0, 0, -3, 482, 0, 0, 0, 0, -24, 510, 0, 0, 0, 0, -3, 555, 0, 0, 0, 0, 19, 590, 0, 0, 0, 0, 30, 614)
+}
+point_count = 20
+
+[sub_resource type="Curve2D" id="Curve2D_augnd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -3, -2, 0, 0, 0, 0, 705, -426)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_o0fag"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2, 0, 0, 0, 0, 0, -522, -471)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_2mbqq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -4, -2, 0, 0, 0, 0, -41, 23, 0, 0, 0, 0, -53, 43, 0, 0, 0, 0, -20, 89, 0, 0, 0, 0, 20, 101, 0, 0, 0, 0, 48, 111, 0, 0, 0, 0, 39, 151, 0, 0, 0, 0, 2, 175, 0, 0, 0, 0, -53, 197, 0, 0, 0, 0, -90, 255, 0, 0, 0, 0, -59, 290, 0, 0, 0, 0, -12, 309, 0, 0, 0, 0, 15, 328, 0, 0, 0, 0, 26, 373, 0, 0, 0, 0, -2, 408, 0, 0, 0, 0, -56, 432, 0, 0, 0, 0, -73, 458, 0, 0, 0, 0, -66, 502, 0, 0, 0, 0, -22, 535, 0, 0, 0, 0, 13, 558, 0, 0, 0, 0, 17, 608, 0, 0, 0, 0, -27, 666, 0, 0, 0, 0, -52, 695, 0, 0, 0, 0, -44, 733, 0, 0, 0, 0, -26, 750)
+}
+point_count = 25
+
+[node name="ActOneLevel" type="Node2D" unique_id=183367415]
+
+[node name="Background" type="ColorRect" parent="." unique_id=955510488]
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="Gun" parent="." unique_id=130334872 node_paths=PackedStringArray("gunRack", "gunFire", "gunReload", "gunDryFire") instance=ExtResource("1_fje2a")]
+bullets = 6
+maxBullets = 6
+gunRack = NodePath("GunRack")
+gunFire = NodePath("GunFire")
+gunReload = NodePath("GunInsertShell")
+gunDryFire = NodePath("GunDryFire")
+
+[node name="GunRack" type="AudioStreamPlayer" parent="Gun" unique_id=1001313436]
+stream = ExtResource("2_06y8a")
+
+[node name="GunFire" type="AudioStreamPlayer" parent="Gun" unique_id=1783943066]
+stream = ExtResource("3_nkdpe")
+
+[node name="GunInsertShell" type="AudioStreamPlayer" parent="Gun" unique_id=973011844]
+stream = ExtResource("4_aq4su")
+
+[node name="GunDryFire" type="AudioStreamPlayer" parent="Gun" unique_id=1530953973]
+stream = ExtResource("5_hx4d8")
+
+[node name="Rounds" type="Node" parent="." unique_id=2101050537 node_paths=PackedStringArray("flash", "roundTransTimer", "roundOne", "roundTwo", "roundThree", "roundFour", "roundFive")]
+script = ExtResource("2_fiy2u")
+flash = NodePath("../UITransitionFlash")
+roundTransTimer = NodePath("RoundTransitionTimer")
+roundOne = NodePath("RoundOne")
+roundTwo = NodePath("RoundTwo")
+roundThree = NodePath("RoundThree")
+roundFour = NodePath("RoundFour")
+roundFive = NodePath("RoundFive")
+
+[node name="RoundOne" type="Node" parent="Rounds" unique_id=693545182]
+
+[node name="Enemy1" parent="Rounds/RoundOne" unique_id=489391669 groups=["round1"] instance=ExtResource("7_nkdpe")]
+position = Vector2(-68, 233)
+curve = SubResource("Curve2D_nkdpe")
+startInstantly = false
+speed = 150
+
+[node name="Enemy2" parent="Rounds/RoundOne" unique_id=1303552408 groups=["round1"] instance=ExtResource("7_nkdpe")]
+position = Vector2(739, 244)
+curve = SubResource("Curve2D_aq4su")
+startInstantly = false
+speed = 150
+
+[node name="RoundTwo" type="Node" parent="Rounds" unique_id=895940275]
+process_mode = 4
+
+[node name="Enemy3" parent="Rounds/RoundTwo" unique_id=982983516 groups=["round2"] instance=ExtResource("7_nkdpe")]
+position = Vector2(156, -74)
+curve = SubResource("Curve2D_hx4d8")
+speed = 150
+
+[node name="Enemy4" parent="Rounds/RoundTwo" unique_id=996649837 groups=["round2"] instance=ExtResource("7_nkdpe")]
+position = Vector2(290, -81)
+curve = SubResource("Curve2D_s4fqs")
+speed = 150
+
+[node name="Enemy5" parent="Rounds/RoundTwo" unique_id=114399753 groups=["round2"] instance=ExtResource("7_nkdpe")]
+position = Vector2(446, -79)
+curve = SubResource("Curve2D_k8yhb")
+speed = 150
+
+[node name="RoundThree" type="Node" parent="Rounds" unique_id=1340299750]
+process_mode = 4
+
+[node name="Enemy6" parent="Rounds/RoundThree" unique_id=1086855718 groups=["round3"] instance=ExtResource("7_nkdpe")]
+position = Vector2(-43, 129)
+curve = SubResource("Curve2D_5bryu")
+speed = 250
+
+[node name="Enemy7" parent="Rounds/RoundThree" unique_id=44478793 groups=["round3"] instance=ExtResource("7_nkdpe")]
+position = Vector2(-43, 69)
+curve = SubResource("Curve2D_e7tw1")
+speed = 250
+
+[node name="Enemy8" parent="Rounds/RoundThree" unique_id=310554068 groups=["round3"] instance=ExtResource("7_nkdpe")]
+position = Vector2(684, 291)
+curve = SubResource("Curve2D_y8vda")
+speed = 250
+
+[node name="Enemy9" parent="Rounds/RoundThree" unique_id=2048505305 groups=["round3"] instance=ExtResource("7_nkdpe")]
+position = Vector2(679, 345)
+curve = SubResource("Curve2D_at4ne")
+speed = 250
+
+[node name="RoundFour" type="Node" parent="Rounds" unique_id=1269437318]
+process_mode = 4
+
+[node name="Enemy10" parent="Rounds/RoundFour" unique_id=1389779482 groups=["round4"] instance=ExtResource("7_nkdpe")]
+position = Vector2(-55, -59)
+curve = SubResource("Curve2D_c5cbl")
+speed = 250
+
+[node name="Enemy11" parent="Rounds/RoundFour" unique_id=172787218 groups=["round4"] instance=ExtResource("7_nkdpe")]
+position = Vector2(704, 253)
+curve = SubResource("Curve2D_ypwxv")
+speed = 250
+
+[node name="Enemy12" parent="Rounds/RoundFour" unique_id=457301893 groups=["round4"] instance=ExtResource("7_nkdpe")]
+position = Vector2(283, -48)
+curve = SubResource("Curve2D_a34yk")
+speed = 250
+
+[node name="RoundFive" type="Node" parent="Rounds" unique_id=1770840220]
+process_mode = 4
+
+[node name="Enemy13" parent="Rounds/RoundFive" unique_id=2129884087 groups=["round5"] instance=ExtResource("7_nkdpe")]
+position = Vector2(-38, 374)
+curve = SubResource("Curve2D_augnd")
+speed = 400
+
+[node name="Enemy14" parent="Rounds/RoundFive" unique_id=840421233 groups=["round5"] instance=ExtResource("7_nkdpe")]
+position = Vector2(709, 415)
+curve = SubResource("Curve2D_o0fag")
+speed = 400
+
+[node name="Enemy15" parent="Rounds/RoundFive" unique_id=1321269801 groups=["round5"] instance=ExtResource("7_nkdpe")]
+position = Vector2(304, -131)
+curve = SubResource("Curve2D_2mbqq")
+speed = 250
+
+[node name="RoundTransitionTimer" type="Timer" parent="Rounds" unique_id=1083102808]
+one_shot = true
+
+[node name="GeneralHUD" parent="." unique_id=2091626887 node_paths=PackedStringArray("gunVars") instance=ExtResource("3_wnag0")]
+gunVars = NodePath("../Gun")
+
+[node name="UITransitionFlash" parent="." unique_id=1424509204 instance=ExtResource("9_aq4su")]
+pathToNewScene = "res://scenes/ACTTWO/actTwoCutscene.tscn"
+whiteFlashOrBlackFlash = false
+
+[node name="Ambience" type="AudioStreamPlayer" parent="." unique_id=1404839509 node_paths=PackedStringArray("flash")]
+stream = ExtResource("10_hx4d8")
+autoplay = true
+script = ExtResource("11_s4fqs")
+flash = NodePath("../UITransitionFlash")

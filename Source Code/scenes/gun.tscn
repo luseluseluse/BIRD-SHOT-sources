@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://cl3ytll4i0p1y"]
+
+[ext_resource type="Script" uid="uid://s6qecxg22oq5" path="res://scripts/player/gun.gd" id="1_haq8l"]
+[ext_resource type="Texture2D" uid="uid://b2t61icc3li0k" path="res://sprites/ui/crosshair.png" id="2_gp1hk"]
+[ext_resource type="FontFile" uid="uid://dyh4hpevdrpga" path="res://fonts/deer-diary.ttf" id="4_qd4js"]
+[ext_resource type="Script" uid="uid://dy7y4x8pyuorw" path="res://scripts/HUD/pumpSlashReload.gd" id="7_bmp1f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qd4js"]
+radius = 4.0
+
+[sub_resource type="Animation" id="Animation_6oi81"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+
+[sub_resource type="Animation" id="Animation_5lyo6"]
+resource_name = "reloadText"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["CHAMBER!"]
+}
+
+[sub_resource type="Animation" id="Animation_bmp1f"]
+resource_name = "reloadText"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["RELOAD!", "", "RELOAD!"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6oi81"]
+_data = {
+&"RESET": SubResource("Animation_6oi81"),
+&"pumpText": SubResource("Animation_5lyo6"),
+&"reloadText": SubResource("Animation_bmp1f")
+}
+
+[node name="Gun" type="Area2D" unique_id=130334872 groups=["gun"]]
+top_level = true
+z_index = 2
+position = Vector2(320, 240)
+script = ExtResource("1_haq8l")
+
+[node name="ReloadDelay" type="Timer" parent="." unique_id=1789246502]
+wait_time = 0.5
+one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1627146570]
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("2_gp1hk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1766977352]
+shape = SubResource("CircleShape2D_qd4js")
+
+[node name="DevTest" type="Control" parent="." unique_id=1098394909]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 480.0
+
+[node name="GeneralText" type="Label" parent="DevTest" unique_id=1914190001]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="PumpSlashReload" type="Control" parent="." unique_id=962803263]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 480.0
+script = ExtResource("7_bmp1f")
+
+[node name="Label" type="Label" parent="PumpSlashReload" unique_id=1546369947]
+z_index = 1
+layout_mode = 0
+offset_left = -40.0
+offset_top = 8.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("4_qd4js")
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="PumpSlashReload" unique_id=53239413]
+wait_time = 0.1
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PumpSlashReload" unique_id=1311184767]
+libraries/ = SubResource("AnimationLibrary_6oi81")
+
+[connection signal="area_exited" from="." to="." method="fistOfTheNorthStar"]
+[connection signal="fire" from="." to="." method="fired"]
+[connection signal="fire" from="." to="PumpSlashReload" method="gunFired"]
+[connection signal="reload" from="." to="." method="reloading"]
+[connection signal="reload" from="." to="PumpSlashReload" method="gunReload"]
+[connection signal="timeout" from="ReloadDelay" to="." method="reloadDelay"]
+[connection signal="animation_finished" from="PumpSlashReload/AnimationPlayer" to="PumpSlashReload" method="pumpReloadTextAnimFinished"]

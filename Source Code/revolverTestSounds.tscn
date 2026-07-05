@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://ct1w4jftwikwg"]
+
+[ext_resource type="PackedScene" uid="uid://cl3ytll4i0p1y" path="res://scenes/gun.tscn" id="1_vow36"]
+[ext_resource type="AudioStream" uid="uid://cubjetadg0mv" path="res://sounds/revolver/insertBullet.mp3" id="2_7fasl"]
+[ext_resource type="AudioStream" uid="uid://deewqr2ochev" path="res://sounds/revolver/revolverShot.mp3" id="3_qn4mw"]
+[ext_resource type="AudioStream" uid="uid://crmghdux2a3wx" path="res://sounds/revolver/revolverCock.mp3" id="4_o0xpj"]
+[ext_resource type="AudioStream" uid="uid://bch20pfkidlpw" path="res://sounds/shotgun/dryFire.mp3" id="5_6o8qm"]
+[ext_resource type="PackedScene" uid="uid://bv0mi055gtvug" path="res://scenes/UI/generalHud.tscn" id="6_o0xpj"]
+
+[node name="RevolverTestSounds" type="Node2D" unique_id=253305904]
+
+[node name="GeneralHUD" parent="." unique_id=2091626887 node_paths=PackedStringArray("gunVars") instance=ExtResource("6_o0xpj")]
+gunVars = NodePath("../Gun")
+
+[node name="Gun" parent="." unique_id=130334872 node_paths=PackedStringArray("gunRack", "gunFire", "gunReload", "gunDryFire") instance=ExtResource("1_vow36")]
+bullets = 6
+maxBullets = 6
+gunRack = NodePath("GunRack")
+gunFire = NodePath("GunFire")
+gunReload = NodePath("GunInsertShell")
+gunDryFire = NodePath("GunDryFire")
+
+[node name="GunRack" type="AudioStreamPlayer" parent="Gun" unique_id=743755886]
+stream = ExtResource("4_o0xpj")
+
+[node name="GunFire" type="AudioStreamPlayer" parent="Gun" unique_id=624691334]
+stream = ExtResource("3_qn4mw")
+
+[node name="GunInsertShell" type="AudioStreamPlayer" parent="Gun" unique_id=1277473502]
+stream = ExtResource("2_7fasl")
+
+[node name="GunDryFire" type="AudioStreamPlayer" parent="Gun" unique_id=330338909]
+stream = ExtResource("5_6o8qm")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=357623539]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.012617188, 0.012617188, 0.012617188, 1)

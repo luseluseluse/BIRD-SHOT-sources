@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://bsi4r7tinn2s7"]
+
+[ext_resource type="Script" uid="uid://bpv8qf3gvp47b" path="res://scripts/ACTONE/actOneCutscene.gd" id="1_b3djy"]
+[ext_resource type="Texture2D" uid="uid://8lkm1dfv7h77" path="res://sprites/backgrounds/TEMP/ACTONE/actOneMarlonHoldingRevolver.png" id="1_ode0d"]
+[ext_resource type="FontFile" uid="uid://dyh4hpevdrpga" path="res://fonts/deer-diary.ttf" id="2_fheon"]
+[ext_resource type="Texture2D" uid="uid://cad8eleb1cyob" path="res://sprites/backgrounds/TEMP/ACTONE/actOneMarlonAimingDown.png" id="2_t2x3a"]
+[ext_resource type="PackedScene" uid="uid://cxs1vxnap356l" path="res://scenes/UI/uiTransitionFlash.tscn" id="5_ofka8"]
+[ext_resource type="AudioStream" uid="uid://bp7jq8qqi5k3w" path="res://sounds/ambience/huntingGameAmbience.mp3" id="6_yfp7n"]
+[ext_resource type="Script" uid="uid://bqxcyx17q7oq6" path="res://scripts/sound/ambience.gd" id="7_pa2be"]
+
+[sub_resource type="Animation" id="Animation_b3djy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_ode0d")]
+}
+
+[sub_resource type="Animation" id="Animation_fheon"]
+resource_name = "shot1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_ode0d")]
+}
+
+[sub_resource type="Animation" id="Animation_ofka8"]
+resource_name = "shot2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_t2x3a")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t2x3a"]
+_data = {
+&"RESET": SubResource("Animation_b3djy"),
+&"shot1": SubResource("Animation_fheon"),
+&"shot2": SubResource("Animation_ofka8")
+}
+
+[node name="ActOneCutscene" type="Control" unique_id=1907349099 node_paths=PackedStringArray("flash")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b3djy")
+flash = NodePath("UITransitionFlash")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=100661207]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(16.119999, 12.36)
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="TextureRect" parent="." unique_id=632738109]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 98.0
+offset_right = -75.333374
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ode0d")
+
+[node name="ChangeBackgrounds" type="AnimationPlayer" parent="." unique_id=316191515]
+libraries/ = SubResource("AnimationLibrary_t2x3a")
+
+[node name="ExpositionText" type="Label" parent="ChangeBackgrounds" unique_id=1096596762]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_fheon")
+text = "You are Marlon Redwood. 
+You’ve been through it all. 
+Robberies, gun for hire, duels, arson and more. 
+This story isn’t about any of those events. 
+You left everything behind and are now alone. 
+The only thing giving you meaning in life… is hunting. 
+
+Shoot down as many birds as you can."
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="UITransitionFlash" parent="." unique_id=1424509204 instance=ExtResource("5_ofka8")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 640.0
+offset_bottom = 480.0
+grow_horizontal = 1
+grow_vertical = 1
+pathToNewScene = "res://scenes/ACTONE/actOneLevel.tscn"
+whiteFlashOrBlackFlash = false
+
+[node name="Ambience" type="AudioStreamPlayer" parent="." unique_id=1961733369 node_paths=PackedStringArray("flash")]
+stream = ExtResource("6_yfp7n")
+autoplay = true
+script = ExtResource("7_pa2be")
+flash = NodePath("../UITransitionFlash")

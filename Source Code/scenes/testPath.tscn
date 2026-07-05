@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bykb7d4gipo2r"]
+
+[ext_resource type="Script" uid="uid://fnalprrigm7m" path="res://scripts/enemy/enemyFollowPath.gd" id="1_g12cu"]
+[ext_resource type="Script" uid="uid://cb7i2djpa1tfr" path="res://scripts/enemy/enemyVars.gd" id="1_kudcq"]
+[ext_resource type="PackedScene" uid="uid://2435jt6qjuxs" path="res://scenes/testEnemy.tscn" id="2_kudcq"]
+
+[node name="TestPath" type="Path2D" unique_id=489391669]
+script = ExtResource("1_kudcq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=190923387]
+position = Vector2(-1, 1)
+loop = false
+script = ExtResource("1_g12cu")
+
+[node name="TestEnemy" parent="PathFollow2D" unique_id=348342620 instance=ExtResource("2_kudcq")]
+
+[node name="StartTimer" type="Timer" parent="PathFollow2D" unique_id=104840166]
+one_shot = true
+
+[connection signal="area_exited" from="PathFollow2D/TestEnemy" to="PathFollow2D/TestEnemy" method="fistOfTheNorthStar"]

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://g4iw4jb6mcpk"]
+
+[ext_resource type="Texture2D" uid="uid://b2t61icc3li0k" path="res://sprites/ui/crosshair.png" id="1_5o7ee"]
+[ext_resource type="Script" uid="uid://cx370lp1hf6kg" path="res://scripts/HUD/mouseCursorForUI.gd" id="2_7d1to"]
+
+[node name="MouseCursorForUi" type="Sprite2D" unique_id=1535715419]
+texture = ExtResource("1_5o7ee")
+script = ExtResource("2_7d1to")

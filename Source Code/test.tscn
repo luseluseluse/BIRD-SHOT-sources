@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://c7q60ieb48j4p"]
+
+[ext_resource type="Script" uid="uid://tyajuj0k1l0t" path="res://scripts/gameLogic/roundLogic.gd" id="1_6uqi0"]
+[ext_resource type="PackedScene" uid="uid://cl3ytll4i0p1y" path="res://scenes/gun.tscn" id="1_37kl0"]
+[ext_resource type="PackedScene" uid="uid://bykb7d4gipo2r" path="res://scenes/testPath.tscn" id="3_6uqi0"]
+[ext_resource type="AudioStream" uid="uid://da0wspcjqd7ii" path="res://sounds/shotgun/rack.mp3" id="4_ehkex"]
+[ext_resource type="AudioStream" uid="uid://bo07it3ngynry" path="res://sounds/shotgun/tempFire.mp3" id="5_xersf"]
+[ext_resource type="AudioStream" uid="uid://bk130evrvbvpn" path="res://sounds/shotgun/insertShell.mp3" id="6_00tp4"]
+[ext_resource type="AudioStream" uid="uid://bch20pfkidlpw" path="res://sounds/shotgun/dryFire.mp3" id="7_77dp3"]
+[ext_resource type="PackedScene" uid="uid://bv0mi055gtvug" path="res://scenes/UI/generalHud.tscn" id="8_ehkex"]
+[ext_resource type="PackedScene" uid="uid://cxs1vxnap356l" path="res://scenes/UI/uiTransitionFlash.tscn" id="9_xersf"]
+
+[sub_resource type="Curve2D" id="Curve2D_ykrsh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 42, -28, 0, 0, 0, 0, 81, -36, 0, 0, 0, 0, 99, -48, 0, 0, 0, 0, 120, -101, 0, 0, 0, 0, 114, -128, 0, 0, 0, 0, 117, -146, 0, 0, 0, 0, 159, -176, 0, 0, 0, 0, 215, -171, 0, 0, 0, 0, 254, -137, 0, 0, 0, 0, 317, -116, 0, 0, 0, 0, 378, -135, 0, 0, 0, 0, 416, -183, 0, 0, 0, 0, 445, -231, 0, 0, 0, 0, 499, -279, 0, 0, 0, 0, 525, -295, 0, 0, 0, 0, 577, -284, 0, 0, 0, 0, 631, -241, 0, 0, 0, 0, 666, -206, 0, 0, 0, 0, 706, -210, 0, 0, 0, 0, 779, -259, 0, 0, 0, 0, 789, -290)
+}
+point_count = 22
+
+[sub_resource type="Curve2D" id="Curve2D_g14j6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, 1, 0, 0, 0, 0, -35, -9, 0, 0, 0, 0, -42, -25, 0, 0, 0, 0, -56, -51, 0, 0, 0, 0, -71, -82, 0, 0, 0, 0, -85, -99, 0, 0, 0, 0, -97, -106, 0, 0, 0, 0, -132, -95, 0, 0, 0, 0, -160, -85, 0, 0, 0, 0, -176, -80, 0, 0, 0, 0, -194, -87, 0, 0, 0, 0, -210, -117, 0, 0, 0, 0, -211, -145, 0, 0, 0, 0, -199, -172, 0, 0, 0, 0, -192, -196, 0, 0, 0, 0, -199, -224, 0, 0, 0, 0, -222, -261, 0, 0, 0, 0, -226, -266, 0, 0, 0, 0, -288, -265, 0, 0, 0, 0, -350, -258, 0, 0, 0, 0, -386, -239, 0, 0, 0, 0, -428, -248, 0, 0, 0, 0, -476, -291, 0, 0, 0, 0, -488, -329, 0, 0, 0, 0, -477, -371, 0, 0, 0, 0, -471, -400, 0, 0, 0, 0, -491, -429, 0, 0, 0, 0, -551, -418, 0, 0, 0, 0, -569, -397, 0, 0, 0, 0, -598, -393, 0, 0, 0, 0, -627, -438, 0, 0, 0, 0, -628, -452, 0, 0, 0, 0, -625, -474, 0, 0, 0, 0, -626, -484, 0, 0, 0, 0, -659, -513, 0, 0, 0, 0, -668, -513, 0, 0, 0, 0, -715, -558)
+}
+point_count = 37
+
+[sub_resource type="Curve2D" id="Curve2D_ppyta"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -4, -3, 0, 0, 0, 0, -18, -68, 0, 0, 0, 0, -26, -85, 0, 0, 0, 0, 6, -125, 0, 0, 0, 0, 27, -134, 0, 0, 0, 0, 45, -153, 0, 0, 0, 0, 54, -186, 0, 0, 0, 0, 47, -232, 0, 0, 0, 0, 38, -257, 0, 0, 0, 0, 43, -279, 0, 0, 0, 0, 60, -304, 0, 0, 0, 0, 82, -327, 0, 0, 0, 0, 116, -362, 0, 0, 0, 0, 131, -415, 0, 0, 0, 0, 134, -461, 0, 0, 0, 0, 151, -505, 0, 0, 0, 0, 210, -531, 0, 0, 0, 0, 299, -562, 0, 0, 0, 0, 349, -582, 0, 0, 0, 0, 393, -615, 0, 0, 0, 0, 446, -629, 0, 0, 0, 0, 489, -634)
+}
+point_count = 22
+
+[sub_resource type="Curve2D" id="Curve2D_vbegm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2, -3, 0, 0, 0, 0, -1, -52, 0, 0, 0, 0, 31, -72, 0, 0, 0, 0, 45, -77, 0, 0, 0, 0, 84, -125, 0, 0, 0, 0, 62, -200, 0, 0, 0, 0, 19, -232, 0, 0, 0, 0, 4, -252, 0, 0, 0, 0, 19, -315, 0, 0, 0, 0, 66, -369, 0, 0, 0, 0, 129, -416, 0, 0, 0, 0, 182, -491, 0, 0, 0, 0, 187, -548, 0, 0, 0, 0, 175, -593, 0, 0, 0, 0, 172, -624, 0, 0, 0, 0, 205, -637)
+}
+point_count = 16
+
+[node name="Test" type="Node2D" unique_id=1228114180]
+
+[node name="Rounds" type="Node" parent="." unique_id=1192579190 node_paths=PackedStringArray("flash", "roundTransTimer", "roundOne", "roundTwo", "roundThree", "roundFour", "roundFive")]
+script = ExtResource("1_6uqi0")
+flash = NodePath("../UITransitionFlash")
+roundTransTimer = NodePath("RoundTransitionWaitTimer")
+roundOne = NodePath("Round1")
+roundTwo = NodePath("Round2")
+roundThree = NodePath("Round3")
+roundFour = NodePath("Round4")
+roundFive = NodePath("Round5")
+
+[node name="Round1" type="Node" parent="Rounds" unique_id=1565148565]
+
+[node name="TestPath" parent="Rounds/Round1" unique_id=489391669 groups=["round1"] instance=ExtResource("3_6uqi0")]
+position = Vector2(-26, 497)
+curve = SubResource("Curve2D_ykrsh")
+finalActEnemy = true
+startInstantly = false
+
+[node name="TestPath2" parent="Rounds/Round1" unique_id=844019854 groups=["round1"] instance=ExtResource("3_6uqi0")]
+position = Vector2(670, 506)
+curve = SubResource("Curve2D_g14j6")
+finalActEnemy = true
+startInstantly = false
+
+[node name="TestPath3" parent="Rounds/Round1" unique_id=1387237405 groups=["round1"] instance=ExtResource("3_6uqi0")]
+position = Vector2(232, 607)
+curve = SubResource("Curve2D_ppyta")
+finalActEnemy = true
+startInstantly = false
+
+[node name="Round2" type="Node" parent="Rounds" unique_id=198874996]
+process_mode = 4
+
+[node name="TestPath" parent="Rounds/Round2" unique_id=20644931 groups=["round2"] instance=ExtResource("3_6uqi0")]
+position = Vector2(152, 569)
+curve = SubResource("Curve2D_vbegm")
+finalActEnemy = true
+
+[node name="Round3" type="Node" parent="Rounds" unique_id=1086322481]
+process_mode = 4
+
+[node name="Round4" type="Node" parent="Rounds" unique_id=563705959]
+process_mode = 4
+
+[node name="Round5" type="Node" parent="Rounds" unique_id=1757445669]
+process_mode = 4
+
+[node name="RoundTransitionWaitTimer" type="Timer" parent="Rounds" unique_id=245907281]
+one_shot = true
+
+[node name="Gun" parent="." unique_id=130334872 node_paths=PackedStringArray("gunRack", "gunFire", "gunReload", "gunDryFire") instance=ExtResource("1_37kl0")]
+gunRack = NodePath("GunRack")
+gunFire = NodePath("GunFire")
+gunReload = NodePath("GunInsertShell")
+gunDryFire = NodePath("GunDryFire")
+
+[node name="GunRack" type="AudioStreamPlayer" parent="Gun" unique_id=156740139]
+stream = ExtResource("4_ehkex")
+
+[node name="GunFire" type="AudioStreamPlayer" parent="Gun" unique_id=2098104933]
+stream = ExtResource("5_xersf")
+
+[node name="GunInsertShell" type="AudioStreamPlayer" parent="Gun" unique_id=1571320489]
+stream = ExtResource("6_00tp4")
+
+[node name="GunDryFire" type="AudioStreamPlayer" parent="Gun" unique_id=658520818]
+stream = ExtResource("7_77dp3")
+
+[node name="GeneralHUD" parent="." unique_id=2091626887 node_paths=PackedStringArray("gunVars") instance=ExtResource("8_ehkex")]
+gunVars = NodePath("../Gun")
+bulletOrShells = true
+
+[node name="Background" type="ColorRect" parent="." unique_id=445091291]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+metadata/_edit_lock_ = true
+
+[node name="UITransitionFlash" parent="." unique_id=1424509204 instance=ExtResource("9_xersf")]

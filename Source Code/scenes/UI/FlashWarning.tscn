@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dlsy1p4vv2ru6"]
+
+[ext_resource type="FontFile" uid="uid://dyh4hpevdrpga" path="res://fonts/deer-diary.ttf" id="1_cm13d"]
+[ext_resource type="Script" uid="uid://bh7onf8s733he" path="res://scripts/HUD/epilepsyText.gd" id="2_4nnnd"]
+[ext_resource type="PackedScene" uid="uid://g4iw4jb6mcpk" path="res://scenes/UI/mouseCursorForUI.tscn" id="2_bfgwy"]
+[ext_resource type="PackedScene" uid="uid://cxs1vxnap356l" path="res://scenes/UI/uiTransitionFlash.tscn" id="5_47mme"]
+
+[node name="FlashWarning" type="Control" unique_id=1303270324]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="." unique_id=1691431672]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="EpilepsyText" type="Label" parent="." unique_id=1065943455 node_paths=PackedStringArray("flash")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_cm13d")
+text = "This game contains a severe amount of flashing lights. 
+If you are prone to epilepsy, 
+please press right click or escape to exit the game. 
+
+If you are not and are fine with flashing lights, 
+please press left click to start the action."
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_4nnnd")
+flash = NodePath("../UITransitionFlash")
+
+[node name="MouseCursorForUi2" parent="." unique_id=1535715419 instance=ExtResource("2_bfgwy")]
+position = Vector2(320, 240)
+
+[node name="UITransitionFlash" parent="." unique_id=1424509204 instance=ExtResource("5_47mme")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 640.0
+offset_bottom = 480.0
+grow_horizontal = 1
+grow_vertical = 1
+pathToNewScene = "res://scenes/UI/mainMenu.tscn"
+whiteFlashOrBlackFlash = false

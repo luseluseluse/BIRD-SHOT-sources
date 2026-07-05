@@ -1,0 +1,198 @@
+[gd_scene format=3 uid="uid://tv5gq5qvnjkv"]
+
+[ext_resource type="Script" uid="uid://b5orruq2ep17h" path="res://scripts/ACTTHREE/actThreeCutscene.gd" id="1_kb8sq"]
+[ext_resource type="AudioStream" uid="uid://bpoxgkenta7fk" path="res://sounds/ambience/cutsceneAmbience.mp3" id="2_8rssg"]
+[ext_resource type="Script" uid="uid://bqxcyx17q7oq6" path="res://scripts/sound/ambience.gd" id="3_e1mk3"]
+[ext_resource type="Texture2D" uid="uid://bldvnlqmvgjge" path="res://sprites/backgrounds/TEMP/ACTTHREE/winnieSmileZoomOutMarlon.png" id="3_igb06"]
+[ext_resource type="PackedScene" uid="uid://cxs1vxnap356l" path="res://scenes/UI/uiTransitionFlash.tscn" id="4_e1mk3"]
+[ext_resource type="Texture2D" uid="uid://i2y5g0cg1g0m" path="res://sprites/backgrounds/TEMP/ACTTHREE/MarlonFacesWinnie.png" id="4_up0ig"]
+[ext_resource type="Texture2D" uid="uid://vsm7yrvrrktu" path="res://sprites/backgrounds/TEMP/ACTTHREE/MarlonHoldingLaugh.png" id="5_56mix"]
+[ext_resource type="Texture2D" uid="uid://c0lbpkauu2mly" path="res://sprites/backgrounds/TEMP/ACTTHREE/ZoomOutWinniePissedMarlonWalking.png" id="6_8tial"]
+[ext_resource type="Texture2D" uid="uid://dwecfgb82tbng" path="res://sprites/backgrounds/TEMP/ACTTHREE/MarlonLookBackSmirk.png" id="7_mvs2h"]
+[ext_resource type="Texture2D" uid="uid://cxq7oe487xim7" path="res://sprites/backgrounds/TEMP/ACTTHREE/MarlonLooksDown.png" id="8_ojuef"]
+[ext_resource type="Texture2D" uid="uid://bx4h53ishc4hx" path="res://sprites/backgrounds/TEMP/ACTTHREE/MarlonSighs.png" id="9_svk7g"]
+
+[sub_resource type="Animation" id="Animation_3dgig"]
+resource_name = "Shot1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_56mix")]
+}
+
+[sub_resource type="Animation" id="Animation_56mix"]
+resource_name = "Shot2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_igb06")]
+}
+
+[sub_resource type="Animation" id="Animation_8tial"]
+resource_name = "Shot3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_up0ig")]
+}
+
+[sub_resource type="Animation" id="Animation_bs2s2"]
+resource_name = "Shot4"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_56mix")]
+}
+
+[sub_resource type="Animation" id="Animation_kn048"]
+resource_name = "Shot5"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_8tial")]
+}
+
+[sub_resource type="Animation" id="Animation_355ic"]
+resource_name = "Shot6"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_mvs2h")]
+}
+
+[sub_resource type="Animation" id="Animation_fur52"]
+resource_name = "Shot7\\"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_ojuef")]
+}
+
+[sub_resource type="Animation" id="Animation_ap7l0"]
+resource_name = "Shot8"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_svk7g")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mvs2h"]
+_data = {
+&"Shot1": SubResource("Animation_3dgig"),
+&"Shot2": SubResource("Animation_56mix"),
+&"Shot3": SubResource("Animation_8tial"),
+&"Shot4": SubResource("Animation_bs2s2"),
+&"Shot5": SubResource("Animation_kn048"),
+&"Shot6": SubResource("Animation_355ic"),
+&"Shot7": SubResource("Animation_fur52"),
+&"Shot8": SubResource("Animation_ap7l0")
+}
+
+[node name="ActThreeCutscene" type="Control" unique_id=2119398030 node_paths=PackedStringArray("flash")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kb8sq")
+flash = NodePath("UITransitionFlash")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=520074073]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="ChangeBackgrounds" type="AnimationPlayer" parent="." unique_id=2039038728]
+libraries/ = SubResource("AnimationLibrary_mvs2h")
+
+[node name="Ambience" type="AudioStreamPlayer" parent="." unique_id=1529961304 node_paths=PackedStringArray("flash")]
+stream = ExtResource("2_8rssg")
+autoplay = true
+script = ExtResource("3_e1mk3")
+flash = NodePath("../UITransitionFlash")
+
+[node name="UITransitionFlash" parent="." unique_id=1424509204 instance=ExtResource("4_e1mk3")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 640.0
+offset_bottom = 480.0
+grow_horizontal = 1
+grow_vertical = 1
+pathToNewScene = "res://scenes/ACTTHREE/actThreeLevel.tscn"
+whiteFlashOrBlackFlash = false
+metadata/_edit_lock_ = true
+
+[node name="Texture" type="TextureRect" parent="." unique_id=575092909]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 98.0
+offset_right = -75.33301
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_56mix")

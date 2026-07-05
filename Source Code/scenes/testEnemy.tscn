@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://2435jt6qjuxs"]
+
+[ext_resource type="Script" uid="uid://cben1wg7d2mxv" path="res://scripts/enemy/enemy.gd" id="1_hvovt"]
+[ext_resource type="Texture2D" uid="uid://wf4lerp4x8ec" path="res://sprites/ui/TEMP/TEMPduck1.png" id="3_ph0lo"]
+[ext_resource type="Texture2D" uid="uid://clcjym0jcw31h" path="res://sprites/ui/TEMP/TEMPduck2.png" id="4_3h0p1"]
+[ext_resource type="Texture2D" uid="uid://d2a06katvt805" path="res://sprites/ui/TEMP/TEMPduckdie1.png" id="4_q834y"]
+[ext_resource type="Texture2D" uid="uid://wg4w7hg2n2i1" path="res://sprites/ui/TEMP/TEMPduckdie2.png" id="5_x4i7o"]
+[ext_resource type="Texture2D" uid="uid://blyn8p5jhvoph" path="res://sprites/ui/duckTargeted2.png" id="7_lvmmm"]
+[ext_resource type="AudioStream" uid="uid://cmhgnvx106c7x" path="res://sounds/birds/birdHit.mp3" id="8_x4i7o"]
+[ext_resource type="AudioStream" uid="uid://dx3e3842tu127" path="res://sounds/birds/birdFlap.mp3" id="9_1t0ss"]
+[ext_resource type="AudioStream" uid="uid://bo07it3ngynry" path="res://sounds/shotgun/tempFire.mp3" id="9_lvmmm"]
+[ext_resource type="AudioStream" uid="uid://dpe3fl8ofli6i" path="res://sounds/birds/BEEPBEEPMOTHERFUCKER.mp3" id="10_lvmmm"]
+[ext_resource type="Texture2D" uid="uid://c4g5ydmhgtg4m" path="res://sprites/ui/WillieCrosshair2.png" id="11_hbagd"]
+[ext_resource type="Texture2D" uid="uid://dudgfo1fg136r" path="res://sprites/ui/WillieCrosshair1.png" id="12_62c1o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q834y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ph0lo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_q834y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_x4i7o")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ph0lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3h0p1")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ph0lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lvmmm")
+}],
+"loop": true,
+"name": &"targetted",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8uh7m"]
+size = Vector2(32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oga88"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_hbagd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_62c1o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_hbagd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_62c1o")
+}],
+"loop": true,
+"name": &"loop",
+"speed": 5.0
+}]
+
+[node name="TestEnemy" type="Area2D" unique_id=348342620]
+z_index = 1
+script = ExtResource("1_hvovt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1601485819]
+position = Vector2(-4, -3)
+scale = Vector2(1.6, 1.6)
+sprite_frames = SubResource("SpriteFrames_q834y")
+animation = &"targetted"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=797412372]
+shape = SubResource("RectangleShape2D_8uh7m")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1760013864]
+rect = Rect2(-5, -5, 10, 10)
+
+[node name="Timer" type="Timer" parent="VisibleOnScreenNotifier2D" unique_id=1288351651]
+wait_time = 0.1
+
+[node name="BirdHit" type="AudioStreamPlayer" parent="." unique_id=253134430]
+stream = ExtResource("8_x4i7o")
+
+[node name="BirdFlap" type="AudioStreamPlayer" parent="." unique_id=1947687125]
+stream = ExtResource("9_1t0ss")
+
+[node name="TimeBeforeDeath" type="Timer" parent="." unique_id=589434804]
+one_shot = true
+
+[node name="OnScreenTimerForACTIII" type="Timer" parent="." unique_id=826279526]
+wait_time = 5.0
+one_shot = true
+
+[node name="WillieShot" type="AudioStreamPlayer" parent="." unique_id=1906032953]
+stream = ExtResource("9_lvmmm")
+
+[node name="BEEPBEEPBEEP" type="AudioStreamPlayer" parent="." unique_id=1504192163]
+stream = ExtResource("10_lvmmm")
+volume_db = -2.0
+
+[node name="Crosshair" type="AnimatedSprite2D" parent="." unique_id=931672254]
+visible = false
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_oga88")
+animation = &"loop"
+frame_progress = 0.5220224
+
+[connection signal="mouse_exited" from="." to="." method="cursorLeft"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="enteredTheScreen"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="notOnScreen"]
+[connection signal="timeout" from="VisibleOnScreenNotifier2D/Timer" to="." method="offScreenTimeout"]

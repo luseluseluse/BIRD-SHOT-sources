@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dlcykad3co3pu"]
+
+[ext_resource type="PackedScene" uid="uid://cl3ytll4i0p1y" path="res://scenes/gun.tscn" id="1_jwy8o"]
+[ext_resource type="PackedScene" uid="uid://2435jt6qjuxs" path="res://scenes/testEnemy.tscn" id="2_fnv40"]
+[ext_resource type="AudioStream" uid="uid://da0wspcjqd7ii" path="res://sounds/shotgun/rack.mp3" id="2_o5lh6"]
+[ext_resource type="AudioStream" uid="uid://bo07it3ngynry" path="res://sounds/shotgun/tempFire.mp3" id="3_g0uso"]
+[ext_resource type="AudioStream" uid="uid://bk130evrvbvpn" path="res://sounds/shotgun/insertShell.mp3" id="4_lxs6r"]
+[ext_resource type="AudioStream" uid="uid://bch20pfkidlpw" path="res://sounds/shotgun/dryFire.mp3" id="5_hcnbg"]
+
+[node name="TestingFinalActEnemy" type="Node2D" unique_id=1070878477]
+
+[node name="Gun" parent="." unique_id=130334872 node_paths=PackedStringArray("gunRack", "gunFire", "gunReload", "gunDryFire") instance=ExtResource("1_jwy8o")]
+position = Vector2(239, 192)
+gunRack = NodePath("GunRack")
+gunFire = NodePath("GunFire")
+gunReload = NodePath("GunInsertShell")
+gunDryFire = NodePath("GunDryFire")
+
+[node name="GunRack" type="AudioStreamPlayer" parent="Gun" unique_id=977670291]
+stream = ExtResource("2_o5lh6")
+
+[node name="GunFire" type="AudioStreamPlayer" parent="Gun" unique_id=1235512232]
+stream = ExtResource("3_g0uso")
+
+[node name="GunInsertShell" type="AudioStreamPlayer" parent="Gun" unique_id=6507635]
+stream = ExtResource("4_lxs6r")
+
+[node name="GunDryFire" type="AudioStreamPlayer" parent="Gun" unique_id=2088838042]
+stream = ExtResource("5_hcnbg")
+
+[node name="TestEnemy" parent="." unique_id=348342620 instance=ExtResource("2_fnv40")]
+position = Vector2(153, 330)
+
+[node name="TestEnemy2" parent="." unique_id=158306622 instance=ExtResource("2_fnv40")]
+position = Vector2(81, 77)
+
+[node name="TestEnemy3" parent="." unique_id=571309515 instance=ExtResource("2_fnv40")]
+position = Vector2(459, 44)
+
+[node name="TestEnemy4" parent="." unique_id=898126362 instance=ExtResource("2_fnv40")]
+position = Vector2(510, 274)
+
+[node name="TestEnemy5" parent="." unique_id=1848249520 instance=ExtResource("2_fnv40")]
+position = Vector2(288, 70)
+
+[node name="TestEnemy6" parent="." unique_id=2020565026 instance=ExtResource("2_fnv40")]
+position = Vector2(350, 354)

@@ -1,0 +1,39 @@
+if {WinnieSucksAss} == true:
+	[signal arg="marlonSittin"]
+	[voice path="res://sounds/actThreeDialogue/WinnieDidBad/Marlton/wow.mp3" volume="0.0"]
+	MarlonRedWood: Wow.
+	[voice path="res://sounds/actThreeDialogue/WinnieDidBad/Marlton/goinghome.mp3" volume="0.0"]
+	MarlonRedWood: I am going home.
+	[signal arg="marlonWalkingAway"]
+	[voice path="res://sounds/actThreeDialogue/WinnieDidBad/Winnie/waitadamnminute.mp3" volume="0.0"]
+	WinnieCLester: S-Shut up! Wait! Wait a damn minute!
+	[signal arg="marlonSmirk"]
+	[voice path="res://sounds/actThreeDialogue/WinnieDidBad/Marlton/BetterBeGood.mp3" volume="0.0"]
+	MarlonRedWood: Better be good, you’ve already wasted enough of my time.
+	[voice path="res://sounds/actThreeDialogue/WinnieDidBad/Winnie/HuntingMatch.mp3" volume="0.0"]
+	WinnieCLester: How about a hunting match. One on One! Five rounds, no turns, whoever hunts down the most birds wins!
+	[signal arg="marlonLooksDown"]
+	MarlonRedWood: ...
+	[signal arg="marlonSighs"]
+	[voice path="res://sounds/actThreeDialogue/WinnieDidBad/Marlton/WhateverYouSay.mp3" volume="0.0"]
+	MarlonRedWood: Whatever you say, Winnie. I got nothing better to do with my life anyway.
+else:
+	[signal arg="marlonImpressed"]
+	[voice path="res://sounds/actThreeDialogue/WinnieDidGood/Marlton/RevolverOcelot.mp3" volume="0.0"]
+	MarlonRedWood: That was some fancy shooting. You’re pretty good, Winnie. Bu-
+	[signal arg="winnieSmile"]
+	[voice path="res://sounds/actThreeDialogue/WinnieDidGood/Winnie/EgoForNothing.mp3" volume="0.0"]
+	WinnieCLester: Do you think this ego was for nothing?
+	[voice path="res://sounds/actThreeDialogue/WinnieDidGood/Marlton/ButItsNotEnough.mp3" volume="0.0"]
+	MarlonRedWood: But it’s not enough.
+	[voice path="res://sounds/actThreeDialogue/WinnieDidGood/Winnie/Showcaseofpower.mp3" volume="0.0"]
+	WinnieCLester: What...? Need more of a showcase of my power?
+	[signal arg="marlonStandUp"]
+	[voice path="res://sounds/actThreeDialogue/WinnieDidGood/Marlton/ToProveYourself.mp3" volume="0.0"]
+	MarlonRedWood: To prove yourself, how about having a hunting match. The rules are-
+	[voice path="res://sounds/actThreeDialogue/WinnieDidGood/Winnie/shootsDownBirdsWins.mp3" volume="0.0"]
+	WinnieCLester: Let me guess... Five rounds, whoever shoots down the most birds wins?
+	[voice path="res://sounds/actThreeDialogue/WinnieDidGood/Marlton/PrettySharp.mp3" volume="0.0"]
+	MarlonRedWood: Pretty sharp, youngster.
+	[voice path="res://sounds/actThreeDialogue/WinnieDidGood/Winnie/withoutmywit.mp3" volume="0.0"]
+	WinnieCLester: Wouldn’t be here today without my wit.

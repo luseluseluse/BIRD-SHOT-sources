@@ -1,0 +1,32 @@
+[voice path="res://sounds/actTwoDialogue/Marlton/ItsGettingDark.mp3" volume="0.0"]
+MarlonRedWood: That’s enough for today, it’s getting dark.
+[voice path="res://sounds/actTwoDialogue/Winnie/HEY.mp3" volume="0.0"]
+HEY!!!
+[voice path="res://sounds/actTwoDialogue/Marlton/SomeoneThere.mp3" volume="0.0"]
+MarlonRedWood: Someone there?
+[voice path="res://sounds/actTwoDialogue/Winnie/CRACKSHOT.mp3" volume="0.0"]
+HEY CRACKSHOT!!!
+[signal arg="quickDrawBG"]
+[voice path="res://sounds/actTwoDialogue/Marlton/WhosThereWhatDoYouWant.mp3" volume="0.0"]
+MarlonRedWood: Who’s there? What do you want with me, huh?
+[voice path="res://sounds/actTwoDialogue/Winnie/DickheadOcelot.mp3" volume="0.0"]
+That’s some pretty fancy shooting for an elder, huh?
+[signal arg="marlonSurprisedLook"]
+[voice path="res://sounds/actTwoDialogue/Marlton/WhatTheWhatAreYou.mp3" volume="0.0"]
+MarlonRedWood: What the... what are you?
+[signal arg="winnieReveal"]
+[voice path="res://sounds/actTwoDialogue/Winnie/IAMAGUNHEAD.mp3" volume="0.0"]
+What am I? What am I?? I am a gunhead! Hey... watch this and I’ll blow your puny mind!
+[signal arg="shootGunhead"]
+[voice path="res://sounds/actTwoDialogue/Winnie/SixFeetUnder.mp3" volume="0.0"]
+See that? I can just think of shooting and BAM! You’re 6 feet under!
+[signal arg="unimpressedMarlon"]
+[voice path="res://sounds/actTwoDialogue/Marlton/AnythingElse.mp3" volume="0.0"]
+MarlonRedWood: Anything else?
+[signal arg="buffArmReveal"]
+[voice path="res://sounds/actTwoDialogue/Winnie/KILLAHORSE.mp3" volume="0.0"]
+I am not done yet... see these arms? I can kill a horse with these guns!
+[voice path="res://sounds/actTwoDialogue/Marlton/Alright.mp3" volume="0.0"]
+MarlonRedWood: A-Alright...
+[voice path="res://sounds/actTwoDialogue/Winnie/MrWinnieCLester.mp3" volume="0.0"]
+WinnieCLester: Hey! Don’t talk and just watch Mr Winnie C. Lester do better hunting then your skinny cactus arms!

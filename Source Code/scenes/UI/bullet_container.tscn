@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://db46ydwliyqlr"]
+
+[ext_resource type="Script" uid="uid://cewa3awplnss5" path="res://scenes/UI/bullet_container.gd" id="1_y8tfa"]
+[ext_resource type="PackedScene" uid="uid://ch0arhkydm3hs" path="res://scenes/UI/bullet.tscn" id="2_y8tfa"]
+
+[node name="ShellContainer" type="HBoxContainer" unique_id=967598254]
+offset_left = 11.0
+offset_top = 394.0
+offset_right = 331.0
+offset_bottom = 458.00012
+script = ExtResource("1_y8tfa")
+
+[node name="Shell1" parent="." unique_id=1991156230 instance=ExtResource("2_y8tfa")]
+layout_mode = 2
+
+[node name="Shell2" parent="." unique_id=347839907 instance=ExtResource("2_y8tfa")]
+layout_mode = 2
+
+[node name="Shell3" parent="." unique_id=1881597010 instance=ExtResource("2_y8tfa")]
+layout_mode = 2
+
+[node name="Shell4" parent="." unique_id=613495996 instance=ExtResource("2_y8tfa")]
+layout_mode = 2
+
+[node name="Shell5" parent="." unique_id=977566337 instance=ExtResource("2_y8tfa")]
+layout_mode = 2
+
+[node name="Shell6" parent="." unique_id=1093061732 instance=ExtResource("2_y8tfa")]
+layout_mode = 2

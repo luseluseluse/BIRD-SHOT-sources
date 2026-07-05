@@ -1,0 +1,5 @@
+[voice path="res://sounds/actOneDialogue/BetsyYoureAllIHaveLeft.mp3" volume="0.0"]
+MarlonRedWood: Betsy... you’re all I have left. Bless me with your strength.
+[signal arg="actOneSceneChange"]
+[voice path="res://sounds/actOneDialogue/AimFireReload.mp3" volume="0.0"]
+MarlonRedWood: Aim (Mouse movement)... fire (Left click)... cock the hammer (Right click)... and if I am out, put as many bullets as I can into the cylinder (Press R repeatedly)...

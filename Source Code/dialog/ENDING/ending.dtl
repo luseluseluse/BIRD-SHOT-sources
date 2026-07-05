@@ -1,0 +1,59 @@
+if {MarlonWins} == true:
+	[signal arg="CloseUpSmile"]
+	[voice path="res://sounds/endingsDialogue/MarltonWon/Marlton/StillGotit.mp3" volume="0.0"]
+	MarlonRedWood: Still got it.
+	[signal arg="WinnieSittingDown"]
+	WinnieCLester: ...
+	[voice path="res://sounds/endingsDialogue/MarltonWon/Marlton/BetterAimThanYou.mp3" volume="0.0"]
+	MarlonRedWood: You know you remind me of someone... he’d still be here if he had any better aim than you.
+	[voice path="res://sounds/endingsDialogue/MarltonWon/Winnie/ItsNotThatBad.mp3" volume="0.0"]
+	WinnieCLester: It’s not that bad!
+	[voice path="res://sounds/endingsDialogue/MarltonWon/Marlton/LessonOrTwo.mp3" volume="0.0"]
+	MarlonRedWood: How about I tell you his story, so that maybe you can learn a lesson or two from him?
+	[signal arg="WinnieLooksDown"]
+	WinnieCLester: ...
+	[signal arg="WinnieLooksUp"]
+	[voice path="res://sounds/endingsDialogue/MarltonWon/Winnie/AreYouPaying.mp3" volume="0.0"]
+	WinnieCLester: Are you paying?
+	[voice path="res://sounds/endingsDialogue/MarltonWon/Marlton/MakeYouListen.mp3" volume="0.0"]
+	MarlonRedWood: If it’ll make you listen.
+	[voice path="res://sounds/endingsDialogue/MarltonWon/Winnie/deal.mp3" volume="0.0"]
+	WinnieCLester: Deal.
+else:
+	[signal arg="WinniePoint"]
+	[voice path="res://sounds/endingsDialogue/MarltonLost/Winnie/NoOnesSurprise.mp3" volume="0.0"]
+	WinnieCLester: And to no one’s surprise... I win!
+	MarlonRedWood: ...
+	[signal arg="WinnieLooksBack"]
+	[voice path="res://sounds/endingsDialogue/MarltonLost/Winnie/AIROFFAILURE.mp3" volume="0.0"]
+	WinnieCLester: Feel that hot air? That’s the air of failure, old timer. What are you gonna do?
+	audio "res://sounds/endingsDialogue/MarltonLost/Marlton/marltonPutsHisHandOnHisRevolver.mp3"
+	[signal arg="MarltonBringsOutGun"]
+	[wait time="1.0"]
+	[voice path="res://sounds/endingsDialogue/MarltonLost/Winnie/YoureSoftAsBabyShit.mp3" volume="0.0"]
+	WinnieCLester: Still got the strength to even pull the trigger, old man? Go ahead. Do it.
+	audio "res://sounds/endingsDialogue/MarltonLost/Marlton/MarltonPutsHisHandOut.mp3"
+	[signal arg="CloseUpOfMarltonsFinger"]
+	MarlonRedWood: ...
+	[voice path="res://sounds/endingsDialogue/MarltonLost/Marlton/marltonPutsHisHandOnHisRevolver.mp3" volume="0.0"]
+	[signal arg="MarltonHolster"]
+	[voice path="res://sounds/endingsDialogue/MarltonLost/Marlton/NoPoint.mp3" volume="0.0"]
+	MarlonRedWood: No point, I won’t get any gratification.
+	[signal arg="WinnieConfusion"]
+	[voice path="res://sounds/endingsDialogue/MarltonLost/Winnie/meangeezer.mp3" volume="0.0"]
+	WinnieCLester: What do you mean, geezer?
+	[signal arg="MarltonSmirks"]
+	[voice path="res://sounds/endingsDialogue/MarltonLost/Marlton/YourAttitude.mp3" volume="0.0"]
+	MarlonRedWood: Your attitude. It’s gonna get you killed... I’d know.
+	[signal arg="WinnieScoffs"]
+	[voice path="res://sounds/endingsDialogue/MarltonLost/Winnie/StillStanding.mp3" volume="0.0"]
+	WinnieCLester: I am still standing, ain't I?
+	[signal arg="MarltonStern"]
+	[voice path="res://sounds/endingsDialogue/MarltonLost/Marlton/JustGoWinnie.mp3" volume="0.0"]
+	MarlonRedWood: ...Just go, Winnie.
+	[signal arg="MarltonWalk"]
+	[wait time="2.0"]
+	[voice path="res://sounds/endingsDialogue/MarltonLost/Winnie/NowIveGot.mp3" volume="0.0"]
+	WinnieCLester: Now, I’ve got nothing left to prove.
+	[signal arg="WinnieWalkAway"]
+	[wait time="2.0"]

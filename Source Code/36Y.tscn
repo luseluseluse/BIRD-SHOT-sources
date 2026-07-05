@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dtj0khclxtbu"]
+
+[ext_resource type="PackedScene" uid="uid://cl3ytll4i0p1y" path="res://scenes/gun.tscn" id="1_laj0h"]
+[ext_resource type="AudioStream" uid="uid://da0wspcjqd7ii" path="res://sounds/shotgun/rack.mp3" id="2_vm1wc"]
+[ext_resource type="AudioStream" uid="uid://bo07it3ngynry" path="res://sounds/shotgun/tempFire.mp3" id="3_vhpva"]
+[ext_resource type="AudioStream" uid="uid://bk130evrvbvpn" path="res://sounds/shotgun/insertShell.mp3" id="4_xaaw2"]
+[ext_resource type="AudioStream" uid="uid://bch20pfkidlpw" path="res://sounds/shotgun/dryFire.mp3" id="5_ssi7a"]
+[ext_resource type="PackedScene" uid="uid://bv0mi055gtvug" path="res://scenes/UI/generalHud.tscn" id="6_lr4k3"]
+
+[node name="Iamhavingastroke" type="Node2D" unique_id=847943400]
+
+[node name="Gun" parent="." unique_id=130334872 node_paths=PackedStringArray("gunRack", "gunFire", "gunReload", "gunDryFire") instance=ExtResource("1_laj0h")]
+bullets = 6
+maxBullets = 6
+gunRack = NodePath("GunRack")
+gunFire = NodePath("GunFire")
+gunReload = NodePath("GunInsertShell")
+gunDryFire = NodePath("GunDryFire")
+
+[node name="GunRack" type="AudioStreamPlayer" parent="Gun" unique_id=1330472359]
+stream = ExtResource("2_vm1wc")
+
+[node name="GunFire" type="AudioStreamPlayer" parent="Gun" unique_id=1659939401]
+stream = ExtResource("3_vhpva")
+
+[node name="GunInsertShell" type="AudioStreamPlayer" parent="Gun" unique_id=1326821440]
+stream = ExtResource("4_xaaw2")
+
+[node name="GunDryFire" type="AudioStreamPlayer" parent="Gun" unique_id=1088025426]
+stream = ExtResource("5_ssi7a")
+
+[node name="GeneralHUD" parent="." unique_id=2091626887 node_paths=PackedStringArray("gunVars") instance=ExtResource("6_lr4k3")]
+gunVars = NodePath("../Gun")
